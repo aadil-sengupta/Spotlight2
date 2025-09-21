@@ -1,0 +1,78 @@
+{
+  "expo": {
+    "name": "SpeechCoach",
+    "slug": "SpeechCoach",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "speechcoach",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera to help you practice speaking and record your sessions.",
+        "NSMicrophoneUsageDescription": "This app uses the microphone to record audio for your speaking practice sessions.",
+        "NSPhotoLibraryUsageDescription": "This app saves your practice recordings to your photo library so you can review them later."
+      },
+      "bundleIdentifier": "com.phantomzneurox.SpeechCoach"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.ACCESS_MEDIA_LOCATION"
+      ],
+      "package": "com.phantomzneurox.SpeechCoach"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow SpeechCoach to access your camera to record practice sessions.",
+          "microphonePermission": "Allow SpeechCoach to access your microphone to record audio for practice sessions.",
+          "recordAudioAndroid": true
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow SpeechCoach to save your practice recordings to your photo library.",
+          "savePhotosPermission": "Allow SpeechCoach to save your practice recordings to your photo library.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "b1545b6e-ccfb-4acb-9f12-92142fadbaf7"
+      }
+    }
+  }
+}
